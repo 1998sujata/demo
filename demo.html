@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div><label>First Value:</label>
+        <input type="text" id="fname"><br>
+    </div>
+    <div><label>Second Value:</label>
+        <input type="text" id="sname"><br>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <td><button onclick="add()">Addition</button>
+                <td><button onclick="substract()">Subtraction</button>
+                <td><button onclick="multiply()">Multiply</button>
+                <td><button onclick="devide()">Divide</button>
+            </tr>            
+        </table>
+    </div>
+    <div><label>Result:</label>
+        <input type="text" id="result" value="Result"><br>
+    </div>
+    <script>
+        function add(x,y)
+        {
+            var x = document.getElementById("fname").value;
+            var y = document.getElementById("sname").value;
+            document.getElementById("result").value = parseInt(x)+parseInt(y);
+            if(x=="")
+            {
+                alert("x not entered");
+            }
+            if(y=="")
+            {
+                alert("y not entered");
+            }
+        }
+        function substract(x,y)
+        {
+            var x = document.getElementById("fname").value;
+            x=parseInt(x)
+            var y = document.getElementById("sname").value;
+            y=parseInt(y)
+            document.getElementById("result").value = x-y;
+            if (x<y)
+            {
+                alert("y is greater")
+            }
+
+        }
+        function multiply(x,y)
+        {
+            var x = document.getElementById("fname").value;
+            var y = document.getElementById("sname").value;
+            document.getElementById("result").value = x*y;
+        }
+        function devide(x,y)
+        {
+            var x = document.getElementById("fname").value;
+            var y = document.getElementById("sname").value;
+            if(x>y)
+            {
+                document.getElementById("result").value = x/y;
+            }
+            else
+            {
+                document.getElementById("result").value = y/x;
+            }
+        }
+    </script>
+</body>
+</html>

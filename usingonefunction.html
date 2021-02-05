@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>First Value:</label>
+        <input type="number" id="fname"><br>
+    <label>Second Value:</label>
+        <input type="number" id="sname"><br>
+
+    <button onclick="myFunction(1)">Addition</button>
+    
+        <button onclick="myFunction(2)">Subtraction</button>
+        <button onclick="myFunction(3)">Multiply</button>
+        <button onclick="myFunction(4)">Divide</button>
+        <input type="number" id="result"><br>
+        <button onclick="cleq()">Clear Result</button>
+        
+  <script>
+
+
+      function myFunction(q) 
+      {
+        var a = parseInt(document.getElementById("fname").value);
+        var b = parseInt(document.getElementById("sname").value);
+        if(!a ||!b)
+        {
+            if(!a && !b)
+            alert("both are null");
+            else if(!a)
+            alert("A is null");
+             else
+             alert("b is null");
+
+        }
+
+
+  switch(q) 
+  {
+    case 1:
+    document.getElementById("result").value = parseInt(a)+parseInt(b);
+    break;
+    case 2:
+    document.getElementById("result").value = parseInt(a)-parseInt(b);
+    if(a<b)
+    {
+        alert("b is greater")
+    }
+    break;
+    case 3:
+    document.getElementById("result").value = parseInt(a)*parseInt(b);
+    break;
+    case 4:
+    document.getElementById("result").value = parseInt(a)/parseInt(b);
+    break;
+  }
+}
+  function cleq()
+  {
+    document.getElementById("result").value = "";
+    document.getElementById("fname").value = "";
+    document.getElementById("sname").value = "";
+    
+  }
+  </script>  
+</body>
+</html>
